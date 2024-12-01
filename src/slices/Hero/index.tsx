@@ -4,11 +4,12 @@ import { asText, Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import gsap from "gsap";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import { Bounded } from "./Bounded";
 import Button from "@/components/Button";
 import { TextSplitter } from "@/components/TextSplitter";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -18,7 +19,7 @@ gsap.registerPlugin(ScrollTrigger);
 export type HeroProps = SliceComponentProps<Content.HeroSlice>;
 
 const Hero = ({ slice }: HeroProps): JSX.Element => {
-  useEffect(() => {
+  useGSAP(() => {
     // Ensure the GSAP animation logic only runs on the client side
     if (typeof window !== "undefined") {
       const introTl = gsap.timeline();
@@ -56,7 +57,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
 
       scrollTl
         .fromTo("body", {
-          backgroundColor: "#FDE047",
+          backgroundColor: "#C4A484",
         }, {
           backgroundColor: "#D9F99D",
           overwrite: "auto",

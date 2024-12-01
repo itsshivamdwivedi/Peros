@@ -36,3 +36,9 @@ export const createClient = (config: prismicNext.CreateClientConfig = {}) => {
 
   return client;
 };
+
+
+const routes: prismic.ClientConfig["routes"] = [
+  { type: "page", path: "/", uid: "home" },
+  { type: "page", path: "/:uid" },
+];

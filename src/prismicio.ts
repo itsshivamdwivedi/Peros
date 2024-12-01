@@ -36,3 +36,6 @@ export const createClient = (config: prismicNext.CreateClientConfig = {}) => {
 
   return client;
 };
+
+
+
